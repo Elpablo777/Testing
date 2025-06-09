@@ -1,0 +1,13 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "React Starter Project",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "echo 'React start placeholder. Use create-react-app or Vite for real project.'"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

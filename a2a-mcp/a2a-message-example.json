@@ -1,0 +1,14 @@
+{
+  "sender": "agent-alpha",
+  "receiver": "agent-beta",
+  "task_type": "code_generation",
+  "payload": {
+    "language": "python",
+    "requirements": ["Django", "REST API"]
+  },
+  "context": {
+    "user": "elpablo777",
+    "session_id": "abc-123"
+  },
+  "timestamp": "2025-06-09T14:10:00Z"
+}

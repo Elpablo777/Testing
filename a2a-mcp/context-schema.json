@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCP: Model Context Protocol Message Schema",
+  "type": "object",
+  "properties": {
+    "agent_id": { "type": "string" },
+    "task": { "type": "string" },
+    "context": { "type": "object" },
+    "timestamp": { "type": "string", "format": "date-time" }
+  },
+  "required": ["agent_id", "task", "context", "timestamp"]
+}

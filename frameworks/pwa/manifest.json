@@ -1,0 +1,8 @@
+{
+  "name": "PWA Starter",
+  "short_name": "PWA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Progressive Web App Example"
+}

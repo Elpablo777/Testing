@@ -1,0 +1,1 @@
+# Platzhalter für Django manage.py – per "django-admin startproject" generieren

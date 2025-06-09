@@ -1,0 +1,12 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "Express Starter Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "testing",
+  "version": "0.1.0",
+  "description": "Basis-Setup für beliebige Node.js-Projekte.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "Elpablo777",
+  "license": "MIT"
+}

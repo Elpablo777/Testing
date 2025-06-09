@@ -1,0 +1,4 @@
+# Python-Abhängigkeiten (Beispiel)
+# Hier können später benötigte Pakete eingetragen werden, z.B.:
+# requests
+# numpy
