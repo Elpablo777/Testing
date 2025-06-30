@@ -84,17 +84,23 @@ jobs:
       # Für diese Sprachen ist ein manueller Build oder ein expliziter Ausschluss nötig.
       # Siehe https://docs.github.com/en/code-security/code-scanning/troubleshooting-code-scanning/automatic-build-failed
       # Beispiel für Java-Projekte: Manuelles Build statt Autobuild
+      # Java: Nur kompilieren, wenn Main.java existiert (kein Maven/Gradle-Projekt)
+      - name: Build Java (javac, falls kein Maven/Gradle)
+        run: |
+          if [ -f "lang/java/Main.java" ]; then
+            javac lang/java/Main.java
+          fi
+      # Maven/Gradle nur, wenn pom.xml oder build.gradle existiert
       - name: Build with Maven (Java, falls benötigt)
         run: |
           if [ -f "pom.xml" ]; then
-            mvn clean install -DskipTests
+            mvn clean package -DskipTests
           fi
-      # Alternativ für Gradle:
-      # - name: Build with Gradle (Java, falls benötigt)
-      #   run: |
-      #     if [ -f "build.gradle" ]; then
-      #       ./gradlew build -x test
-      #     fi
+      - name: Build with Gradle (Java, falls benötigt)
+        run: |
+          if [ -f "build.gradle" ]; then
+            ./gradlew build -x test
+          fi
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         continue-on-error: true
