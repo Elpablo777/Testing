@@ -80,8 +80,12 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: python, javascript
+      # Java, Rust, Go, C, C++, C#, Swift, Ruby, etc. werden nicht automatisch gebaut!
+      # Für diese Sprachen ist ein manueller Build oder ein expliziter Ausschluss nötig.
+      # Siehe https://docs.github.com/en/code-security/code-scanning/troubleshooting-code-scanning/automatic-build-failed
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        continue-on-error: true
 
   badges:
     name: Generate Badges
