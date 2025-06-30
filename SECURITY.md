@@ -1,21 +1,28 @@
-# Security Policy
 
-## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+# Security Policy / Sicherheitshinweise
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Unterstützte Versionen
 
-## Reporting a Vulnerability
+| Version   | Unterstützt         |
+| --------- | ------------------ |
+| Aktuell   | :white_check_mark: |
+| Ältere    | :x:                |
 
-Use this section to tell people how to report a vulnerability.
+## Sicherheitslücken melden
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- Bitte Sicherheitsprobleme **vertraulich** an das Maintainer-Team melden:
+  - E-Mail: elpablo777+security@protonmail.com
+  - Alternativ als privates GitHub-Issue (wird nicht öffentlich gemacht)
+- Wir bestätigen den Eingang innerhalb von 48h und halten dich über den Stand auf dem Laufenden.
+- Nach erfolgreicher Behebung wird die Lücke im Changelog dokumentiert.
+
+
+## Offenlegung, Review & Community
+- Sicherheitsrelevante Änderungen werden vorab intern geprüft und nach Möglichkeit öffentlich dokumentiert (siehe Changelog).
+- Feedback zu Security-Themen ist ausdrücklich erwünscht (Issue oder E-Mail).
+- Für Code-Review und Security-Review gibt es dedizierte Labels im Issue-Tracker (`security`, `review`).
+
+## Hinweise
+- Bitte keine Sicherheitslücken öffentlich posten, bevor ein Fix bereitsteht.
+- Für allgemeine Fragen oder Unsicherheiten gerne Kontakt aufnehmen.

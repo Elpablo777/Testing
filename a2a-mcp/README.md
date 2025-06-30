@@ -28,6 +28,17 @@
 - Submodule für SDKs optional direkt einbinden (siehe ToDos)
 - Integrationsbeispiele für spezifische Agentenplattformen ergänzen
 
+## Beispiel- und Test-Clients
+
+- Beispiel-Client für MCP (Python): `tests/python/test_mcp_client.py` (Platzhalter, für echte Nutzung SDK einbinden)
+- Beispiel-Client für A2A (Node.js): `tests/node/test_a2a_client.js` (Platzhalter, für echte Nutzung SDK einbinden)
+- Beispiel-Nachrichten: `a2a-message-example.json`, weitere Formate siehe `docs/architektur_agenten.md`
+
+**Hinweise:**
+- Für echte Integration: Offizielle SDKs als Submodule einbinden (siehe `/external/README.md`).
+- Test- und Beispiel-Clients sind kommentiert und können als Vorlage für eigene Experimente dienen.
+- Für Integrationsbeispiele mit Windsurf/Cline: Siehe ToDo-Liste und `/tasks/`.
+
 ## Anbindung an das interne Agenten-Framework
 Dieses Repository enthält nun unter `src/agent_framework/` ein einfaches, simuliertes Framework für Multi-Agenten-Systeme. Dieses Framework nutzt die hier definierten A2A/MCP-ähnlichen Nachrichtenprinzipien zur Kommunikation zwischen simulierten Agenten mit verschiedenen Rollen (z.B. Planung, Datensammlung, Ausführung).
 
