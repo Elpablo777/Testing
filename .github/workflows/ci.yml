@@ -79,7 +79,8 @@ jobs:
       - name: GitHub Advanced Security (Secret Scanning)
         uses: github/codeql-action/init@v3
         with:
-          languages: python, javascript
+          # Rust wird von CodeQL nicht unterstützt! Nur unterstützte Sprachen angeben.
+          languages: python, javascript, java, java-kotlin
       # Java, Rust, Go, C, C++, C#, Swift, Ruby, etc. werden nicht automatisch gebaut!
       # Für diese Sprachen ist ein manueller Build oder ein expliziter Ausschluss nötig.
       # Siehe https://docs.github.com/en/code-security/code-scanning/troubleshooting-code-scanning/automatic-build-failed
