@@ -11,8 +11,13 @@ Dieses Framework dient zur Simulation eines Multi-Agenten-Systems, das auf Nachr
     -   `user_proxy_agent.py`: `UserProxyAgent` - Nimmt Anfragen vom (simulierten) Benutzer entgegen und gibt finale Ergebnisse aus.
     -   `task_planning_agent.py`: `TaskPlanningAgent` - Zerlegt komplexe Anfragen in Teilaufgaben, delegiert diese an spezialisierte Agenten und aggregiert die Ergebnisse.
     -   `data_collection_agent.py`: `DataCollectionAgent` - Simuliert die Beschaffung von Informationen (z.B. Wetterdaten, Suchergebnisse).
-    -   `local_execution_agent_interface.py`: `LocalExecutionAgentInterface` - Simuliert die Ausführung von Code oder Systembefehlen (z.B. Dateierstellung). Dient als Schnittstelle zu einem potenziellen, lokal laufenden Ausführungsagenten wie Open Interpreter.
--   **`message_examples/`**: Enthält JSON-Beispiele für die Nachrichtenformate, die zwischen den Agenten ausgetauscht werden. Diese illustrieren die Struktur von Anfragen, Aufgaben und Ergebnissen.
+    -   `local_execution_agent_interface.py`: `LocalExecutionAgentInterface` - Simuliert die Ausführung von Code oder Systembefehlen. Dieser Agent wertet einen `command_type` in der an ihn gesendeten `execution_task`-Nachricht aus. Unterstützte `command_types` sind aktuell:
+        -   `create_file`: Erstellt (simuliert) eine Datei. Benötigt `filename` und optional `file_content` in der Payload.
+        -   `read_file`: Liest (simuliert) den Inhalt einer Datei. Benötigt `filename`. Das Ergebnis enthält den gelesenen `file_content`.
+        -   `run_python_script`: Simuliert die Ausführung eines Python-Skripts. Benötigt `script_code`.
+        -   `execute_shell_command`: Simuliert die Ausführung eines Shell-Befehls. Benötigt `shell_command`.
+        Er dient als Schnittstelle zu einem potenziellen, lokal laufenden Ausführungsagenten (z.B. Open Interpreter).
+-   **`message_examples/`**: Enthält JSON-Beispiele für die Nachrichtenformate, die zwischen den Agenten ausgetauscht werden. Diese illustrieren die Struktur von Anfragen, Aufgaben und Ergebnissen (siehe z.B. `planning_delegation_exec_example.json` für ein Beispiel mit `command_type`).
 
 ## Funktionsweise
 

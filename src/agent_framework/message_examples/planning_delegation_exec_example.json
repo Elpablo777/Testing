@@ -1,18 +1,18 @@
 {
   "sender": "TaskPlanningAgent_1",
   "receiver": "LocalExecutionAgentInterface_1",
-  "message_id": "msg_003",
-  "timestamp": "2024-03-10T10:00:10Z",
+  "message_id": "msg_exec_001",
+  "timestamp": "2024-03-11T11:00:00Z",
   "task_type": "execution_task",
   "payload": {
-    "language": "python",
-    "code": "print('Hallo Welt von Agent Alpha!')",
-    "filename": "hallo.py",
-    "execution_environment": "simulated_local_python"
+    "command_type": "create_file",
+    "filename": "example_output.txt",
+    "file_content": "Dies ist ein Beispielinhalt, der vom LocalExecutionAgentInterface (simuliert) in eine Datei geschrieben wird.\nZweite Zeile zum Testen."
   },
   "context": {
-    "original_request_id": "msg_001",
+    "original_request_id": "user_req_complex_001",
     "user_id": "elpablo777",
-    "session_id": "session_abc123"
+    "session_id": "session_abc456",
+    "execution_priority": "normal"
   }
 }

@@ -69,14 +69,20 @@ class MessageBroker:
         if receiver_id in self.agents:
             receiver_agent = self.agents[receiver_id]
             try:
+                # Versuche, die Nachricht dem Empfänger-Agenten zuzustellen und ihn die Nachricht verarbeiten zu lassen.
                 print(f"DEBUG: MessageBroker leitet Nachricht {message_id} von {sender_id} an {receiver_id} weiter.")
                 receiver_agent.receive_message(message)
             except Exception as e:
-                print(f"FEHLER: Fehler bei der Nachrichtenverarbeitung durch Agent {receiver_id} für Nachricht {message_id}: {e}")
-                # Hier könnte man eine Fehlerbehandlungsroutine einbauen, z.B. Nachricht an Absender zurück
+                # Fängt alle Fehler ab, die während der `receive_message` oder `handle_message` Methode des Empfängeragenten auftreten.
+                print(f"FEHLER: Kritischer Fehler im Agenten {receiver_id} bei der Verarbeitung von Nachricht {message_id} von {sender_id}. Fehler: {e}")
+                # Zukünftige Erweiterung: Hier könnte eine Fehlernachricht an den ursprünglichen Sender gesendet werden
+                # oder die Nachricht in eine "Dead Letter Queue" verschoben werden.
         else:
-            print(f"WARNUNG: Empfänger-Agent {receiver_id} für Nachricht {message_id} von {sender_id} nicht registriert. Nachricht wird verworfen:\n{json.dumps(message, indent=2)}")
-            # Hier könnte man eine "Unzustellbar"-Nachricht an den Absender senden, falls dieser existiert
+            # Der angegebene Empfänger-Agent ist nicht im Broker registriert.
+            print(f"WARNUNG: Empfänger-Agent '{receiver_id}' für Nachricht {message_id} (gesendet von '{sender_id}') ist nicht registriert. Nachricht wird verworfen.")
+            print(f"DETAIL: Verworfene Nachricht: {json.dumps(message, indent=2)}")
+            # Zukünftige Erweiterung: Eine "Unzustellbar"-Nachricht könnte hier an den sender_id gesendet werden,
+            # falls dieser existiert und registriert ist.
 
     def get_agent(self, agent_id):
         """
