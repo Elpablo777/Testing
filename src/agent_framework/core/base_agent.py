@@ -78,9 +78,40 @@ class BaseAgent:
         Args:
             message (dict): Die zu verarbeitende Nachricht.
         """
-        print(f"INFO: Agent {self.agent_id} verarbeitet Nachricht {message.get('message_id')}: {json.dumps(message, indent=2)}")
-        # Standardimplementierung: Macht nichts weiter.
+        # Standardimplementierung: Loggt die Nachricht.
         # In Unterklassen überschreiben, um auf Nachrichten zu reagieren.
+        # Diese Methode wird von `receive_message` aufgerufen.
+        try:
+            # Die eigentliche Verarbeitungslogik sollte in den abgeleiteten Klassen implementiert werden.
+            # Hier wird nur geloggt, dass die Basis-handle_message erreicht wurde, falls eine Unterklasse sie nicht überschreibt
+            # oder super().handle_message() aufruft.
+            print(f"INFO: {self.agent_id} - Basis-handle_message für Nachricht {message.get('message_id')} von {message.get('sender')}.")
+            print(f"DETAIL: Nachrichteninhalt: {json.dumps(message, indent=2, ensure_ascii=False)}")
+
+            # Hier ist der Platz, wo abgeleitete Agenten ihre spezifische Logik implementieren.
+            # Wenn eine abgeleitete Klasse diese Methode nicht korrekt implementiert oder einen Fehler hat,
+            # wird der folgende Except-Block ausgelöst.
+
+        except Exception as e:
+            # Fängt alle unerwarteten Fehler ab, die in der `handle_message`-Implementierung
+            # einer abgeleiteten Agentenklasse auftreten könnten.
+            print(f"FEHLER: Kritischer Fehler in Agent {self.agent_id} bei der spezifischen Verarbeitung (handle_message) von Nachricht {message.get('message_id')}.")
+            print(f"FEHLERDETAILS: {e}")
+            print(f"NACHRICHT, DIE ZUM FEHLER FÜHRTE: {json.dumps(message, indent=2, ensure_ascii=False)}")
+            # Zukünftige Erweiterung: Hier könnte der Agent versuchen, eine standardisierte Fehlernachricht
+            # an den ursprünglichen Absender der problematischen Nachricht oder an einen Supervisor-Agenten zu senden.
+            # Beispiel:
+            # if message.get("sender"):
+            #     self.send_message(
+            #         receiver_id=message.get("sender"),
+            #         task_type="error_processing_message",
+            #         payload={
+            #             "error_summary": f"Fehler bei der Verarbeitung von Nachricht {message.get('message_id')}",
+            #             "error_details": str(e),
+            #             "original_message": message
+            #         },
+            #         context={"original_request_id": message.get("context", {}).get("original_request_id") or message.get("message_id")}
+            #     )
 
     def check_inbox(self):
         """
