@@ -1,0 +1,16 @@
+{
+  "sender": "TaskPlanningAgent_1",
+  "receiver": "DataCollectionAgent_1",
+  "message_id": "msg_002",
+  "timestamp": "2024-03-10T10:00:05Z",
+  "task_type": "data_collection_task",
+  "payload": {
+    "query": "aktuelles Wetter in Berlin",
+    "requested_data_format": "text_summary"
+  },
+  "context": {
+    "original_request_id": "msg_001",
+    "user_id": "elpablo777",
+    "session_id": "session_abc123"
+  }
+}
