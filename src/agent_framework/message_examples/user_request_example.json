@@ -1,0 +1,15 @@
+{
+  "sender": "user@ui",
+  "receiver": "UserProxyAgent_1",
+  "message_id": "msg_001",
+  "timestamp": "2024-03-10T10:00:00Z",
+  "task_type": "user_request",
+  "payload": {
+    "query": "Finde das aktuelle Wetter in Berlin und erstelle dann eine Python-Datei namens 'hallo.py', die 'Hallo Welt von Agent Alpha!' ausgibt."
+  },
+  "context": {
+    "user_id": "elpablo777",
+    "session_id": "session_abc123",
+    "priority": "high"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sender": "DataCollectionAgent_1",
+  "receiver": "TaskPlanningAgent_1",
+  "message_id": "msg_004",
+  "timestamp": "2024-03-10T10:01:00Z",
+  "task_type": "data_collection_result",
+  "payload": {
+    "source_query": "aktuelles Wetter in Berlin",
+    "status": "success",
+    "data": {
+      "temperature": "5°C",
+      "condition": "leicht bewölkt",
+      "humidity": "75%",
+      "wind": "10 km/h West"
+    },
+    "raw_data_source": "simulated_weather_api_call"
+  },
+  "context": {
+    "original_request_id": "msg_001",
+    "delegated_task_id": "msg_002"
+  }
+}

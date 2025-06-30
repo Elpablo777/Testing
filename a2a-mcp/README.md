@@ -28,4 +28,14 @@
 - Submodule für SDKs optional direkt einbinden (siehe ToDos)
 - Integrationsbeispiele für spezifische Agentenplattformen ergänzen
 
+## Anbindung an das interne Agenten-Framework
+Dieses Repository enthält nun unter `src/agent_framework/` ein einfaches, simuliertes Framework für Multi-Agenten-Systeme. Dieses Framework nutzt die hier definierten A2A/MCP-ähnlichen Nachrichtenprinzipien zur Kommunikation zwischen simulierten Agenten mit verschiedenen Rollen (z.B. Planung, Datensammlung, Ausführung).
+
+Das Framework dient als:
+-   **Blaupause**: Wie komplexere Agenten-Interaktionen strukturiert werden können.
+-   **Testumgebung**: Um Kommunikationsflüsse und Nachrichtenformate zu erproben.
+-   **Ausgangspunkt**: Für die Entwicklung von anspruchsvolleren Agenten-Systemen, die möglicherweise reale lokale Tools (wie Open Interpreter) oder externe LLMs einbinden.
+
+Weitere Details und eine Anleitung zur Nutzung finden Sie in der `README.md` des Frameworks unter [`src/agent_framework/README.md`](../src/agent_framework/README.md).
+
 ---
